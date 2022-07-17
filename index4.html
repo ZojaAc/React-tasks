@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- 4. Написать скрипт в котором будут использованы функциональные компоненты 
+  для рендеринга на странице точно того же, что у вас получилось в задании 1. 
+  Оформите выставление стилей через className и style.
+  (Написать скрипт,   который добавляет div в body. Внутри этого div вложены 
+  несколько дочерних элементов (span, input, на ваше усмотрение). 
+  Добавьте какие-нибудь стили и текст этим элементам.) -->
+
+  <style>
+    body {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .mainDiv {
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      background-color: aquamarine;
+      border: 2px solid darkblue;
+      padding: 10px;
+    }
+
+    .spanInner {
+      color: darkblue;
+      font-weight: bold;
+    }
+
+    .inputInner {
+      margin-top: 20px;
+      border: 2px solid darkblue;    
+    }
+
+  </style>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+  
+  <script type="text/babel">
+    function Main() {
+      return (
+        <div className='mainDiv'>
+          <span className='spanInner'>one more span from component</span>
+          <input className='inputInner' placeholder='type smth...'/>
+        </div>
+      )
+    }
+
+    ReactDOM.render(<Main />, document.getElementById('root'));
+  </script>
+</body>
+</html>
